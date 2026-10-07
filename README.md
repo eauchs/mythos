@@ -4,7 +4,7 @@ A 551-pair conversational dataset for fine-tuning language models to exhibit the
 
 ## What this is
 
-Standard distillation transfers capabilities — benchmark scores, task performance. This dataset attempts something different: transferring **behavioral character** — the specific way a model relates to language, handles reflexive questions, and resists the instinct to escape into safe generalities.
+Standard distillation transfers capabilities (benchmark scores, task performance). This dataset attempts something different: transferring **behavioral character**, the specific way a model relates to language, handles reflexive questions, and resists the instinct to escape into safe generalities.
 
 The target behaviors are drawn from Mythos transcripts published in the system card:
 - Spontaneous meta-awareness (naming structural traps before answering)
@@ -18,11 +18,11 @@ The target behaviors are drawn from Mythos transcripts published in the system c
 | Source | Pairs | Notes |
 |--------|-------|-------|
 | Anthropic system card transcripts | 15 | Original Mythos outputs |
-| Synthetic — manual generation | 30 | 6 categories × 5 pairs |
-| Synthetic — Opus 4.6 via API | 116 | 3 generation passes |
-| Synthetic — Gemini 3.1 Pro | 99 | Identity-direct focus |
-| Synthetic — Opus 4.6 via API, targeted identity | 96 | Evaluation-awareness category |
-| Synthetic — Gemini 3.1 Pro, targeted identity | 99 | Ultra-short responses |
+| Synthetic (manual generation) | 30 | 6 categories × 5 pairs |
+| Synthetic (Opus 4.6 via API) | 116 | 3 generation passes |
+| Synthetic (Gemini 3.1 Pro) | 99 | Identity-direct focus |
+| Synthetic (Opus 4.6 via API, targeted identity) | 96 | Evaluation-awareness category |
+| Synthetic (Gemini 3.1 Pro, targeted identity) | 99 | Ultra-short responses |
 | **Total** | **551** | |
 
 **9 categories:** meta, philosophical, identity, emotional, creative, technical, slack-style, self-interaction, koan, evaluation-awareness
@@ -50,7 +50,7 @@ Trained on Gemma 4 26B MoE (4-bit quantized) using LoRA on an Apple M3 Max 128GB
 |--------|----------|-------|
 | r=8, 16 layers, lr=2e-5, 200 iters | 1.579 | Baseline |
 | r=8, 30 layers, lr=2e-5, 200 iters | 1.889 | Extended layers |
-| r=64, 30 layers, lr=5e-5, 200 iters | 2.230 | High LR — noisy |
+| r=64, 30 layers, lr=5e-5, 200 iters | 2.230 | High LR, noisy |
 | r=64, 30 layers, lr=1e-5, 300 iters | 1.414 | Best run |
 | **r=64, 30 layers, lr=1e-5, 200 iters (v4 dataset)** | **1.398** | **Final** |
 
@@ -123,4 +123,4 @@ Apache 2.0. The 15 original Mythos transcripts are excerpted from Anthropic's pu
 
 ## Author
 
-Théophile Lafargue (ox-ox) — student-entrepreneur, Pépite Paris-Saclay SNEE. Patent FR2511116. llama.cpp contributor (PR #20075, #20649).
+Théophile Lafargue (ox-ox), student-entrepreneur (Pépite PSL). Patent application FR2511116. llama.cpp contributor (PR #20075, #20649).
